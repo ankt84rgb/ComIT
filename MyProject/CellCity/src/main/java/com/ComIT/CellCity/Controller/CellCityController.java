@@ -10,5 +10,16 @@ public class CellCityController {
     public String HomePage() {
         return "index";
     }
-
+    @GetMapping("/checkout")
+    public String CheckoutPage() {
+        return "checkout";
+    }
+    @GetMapping("/cart")
+    public String CartPage() {
+        return "cart";
+    }
+    @GetMapping("/shop")
+    public String ShopPage() {
+        return "shop";
+    }
 }

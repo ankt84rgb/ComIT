@@ -18,10 +18,11 @@ public class Mobile {
     private Integer storageSize;
     private Boolean isMemoryCardSupported;
     private Boolean isWirelessChargingSupported;
+    private String imageFilePath;
 
     public Mobile () { }
 
-    public Mobile(String brand, Long price, double screenSize, Integer ramSize, Integer storageSize, Boolean isMemoryCardSupported, Boolean isWirelessChargingSupported) {
+    public Mobile(String brand, Long price, double screenSize, Integer ramSize, Integer storageSize, Boolean isMemoryCardSupported, Boolean isWirelessChargingSupported, String imageFilePath) {
         this.brand = brand;
         this.price = price;
         this.screenSize = screenSize;
@@ -29,6 +30,7 @@ public class Mobile {
         this.storageSize = storageSize;
         this.isMemoryCardSupported = isMemoryCardSupported;
         this.isWirelessChargingSupported = isWirelessChargingSupported;
+        this.imageFilePath = imageFilePath;
     }
 
     public String getBrand() {
@@ -85,5 +87,13 @@ public class Mobile {
 
     public void setWirelessChargingSupported(Boolean wirelessChargingSupported) {
         isWirelessChargingSupported = wirelessChargingSupported;
+    }
+
+    public String getImageFilePath() {
+        return imageFilePath;
+    }
+
+    public void setImageFilePath(String imageFilePath) {
+        this.imageFilePath = imageFilePath;
     }
 }
