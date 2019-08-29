@@ -12,17 +12,17 @@ public class Mobile {
     private Long Id;
 
     private String brand;
-    private Long price;
-    private double screenSize;
+    private Integer price;
+    private Integer screenSize;
     private Integer ramSize;
     private Integer storageSize;
-    private Boolean isMemoryCardSupported;
-    private Boolean isWirelessChargingSupported;
-    private String imageFilePath;
+    private Character isMemoryCardSupported;
+    private Character isWirelessChargingSupported;
+//    private String imageFilePath;
 
     public Mobile () { }
 
-    public Mobile(String brand, Long price, double screenSize, Integer ramSize, Integer storageSize, Boolean isMemoryCardSupported, Boolean isWirelessChargingSupported, String imageFilePath) {
+    public Mobile(String brand, Integer price, Integer screenSize, Integer ramSize, Integer storageSize, Character isMemoryCardSupported, Character isWirelessChargingSupported) {
         this.brand = brand;
         this.price = price;
         this.screenSize = screenSize;
@@ -30,7 +30,6 @@ public class Mobile {
         this.storageSize = storageSize;
         this.isMemoryCardSupported = isMemoryCardSupported;
         this.isWirelessChargingSupported = isWirelessChargingSupported;
-        this.imageFilePath = imageFilePath;
     }
 
     public String getBrand() {
@@ -41,19 +40,19 @@ public class Mobile {
         this.brand = brand;
     }
 
-    public Long getPrice() {
+    public Integer getPrice() {
         return price;
     }
 
-    public void setPrice(Long price) {
+    public void setPrice(Integer price) {
         this.price = price;
     }
 
-    public double getScreenSize() {
+    public Integer getScreenSize() {
         return screenSize;
     }
 
-    public void setScreenSize(double screenSize) {
+    public void setScreenSize(Integer screenSize) {
         this.screenSize = screenSize;
     }
 
@@ -73,27 +72,20 @@ public class Mobile {
         this.storageSize = storageSize;
     }
 
-    public Boolean getMemoryCardSupported() {
+    public Character getIsMemoryCardSupported() {
         return isMemoryCardSupported;
     }
 
-    public void setMemoryCardSupported(Boolean memoryCardSupported) {
-        isMemoryCardSupported = memoryCardSupported;
+    public void setIsMemoryCardSupported(Character isMemoryCardSupported) {
+        this.isMemoryCardSupported = isMemoryCardSupported;
     }
 
-    public Boolean getWirelessChargingSupported() {
+    public Character getIsWirelessChargingSupported() {
         return isWirelessChargingSupported;
     }
 
-    public void setWirelessChargingSupported(Boolean wirelessChargingSupported) {
-        isWirelessChargingSupported = wirelessChargingSupported;
-    }
-
-    public String getImageFilePath() {
-        return imageFilePath;
-    }
-
-    public void setImageFilePath(String imageFilePath) {
-        this.imageFilePath = imageFilePath;
+    public void setIsWirelessChargingSupported(Character isWirelessChargingSupported) {
+        this.isWirelessChargingSupported = isWirelessChargingSupported;
     }
 }
+

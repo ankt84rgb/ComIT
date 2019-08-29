@@ -3,153 +3,122 @@
 <head>
     <title>Add new mobile data</title>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">x
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
 <body>
 
-<p>Name: <input type="text" th:field="*{name}" /></p>
-<p>Address: <input type="text" th:field="*{address}" /></p>
-<p>City: <input type="text" th:field="*{city}" /></p>
-<p>Province: <input type="text" th:field="*{province}" /></p>
-<p><input type="submit" value="Submit" /></p>
+<!--<div class="container">-->
+<!--    <br>-->
+<!--    <center><span class="badge badge-pill badge-primary" style="font-size: 30px" >Upload new mobile data</span></center>-->
+<!--    <br>-->
+<!--    <form action="#" th:action="@{/admin}" th:object="${mobile}" method="post">-->
+<!--        <div class="form-group">-->
+<!--            <label for="formGroupBrand"><b>Mobile Brand: </b></label>-->
+<!--            <input type="text" class="form-control" id="formGroupBrand" placeholder="Enter the brand name of the mobile" th:field="*{brand}">-->
+<!--        </div>-->
+<!--        <div class="form-group">-->
+<!--            <label for="formGroupPrice"><b>Mobile Price</b></label>-->
+<!--            <input type="number" class="form-control" id="formGroupPrice" placeholder="Enter the price of the mobile" th:field="*{price}">-->
+<!--        </div>-->
+<!--        <div class="form-group">-->
+<!--            <label for="formGroupScreenSize"><b>Enter the size of the Screen(in Inches): </b></label>-->
+<!--            <input type="number" class="form-control" id="formGroupScreenSize" placeholder="e.g. 4.5, 6.5 etc." th:field="*{screenSize}">-->
+<!--        </div>-->
+<!--        <div class="form-group">-->
+<!--            <label for="formGroupRamSize"><b>Enter the amount of Ram available(in GB): </b></label>-->
+<!--            <input type="number" class="form-control" id="formGroupRamSize" placeholder="e.g. 4, 8 etc. " th:field="*{ramSize}">-->
+<!--        </div>-->
+<!--        <div class="form-group">-->
+<!--            <label for="formGroupStorageSize"><b>Enter the Storage capacity(in GB): </b></label>-->
+<!--            <input type="number" class="form-control" id="formGroupStorageSize" placeholder="e.g. 64, 128 etc. " th:field="*{storageSize}">-->
+<!--        </div>-->
+<!--        <label><b>Is memory card supported or not? </b></label>-->
+<!--        <div class="form-group">-->
+<!--            <label class="card-support">-->
+<!--                <input type="checkbox" class="mr-1" name="choice" th:field="*{isMemoryCardSupported}"> Is memory card supported ?-->
+<!--            </label>-->
+<!--        </div>-->
+<!--        <label><b>Is wireless charging supported ? </b></label>-->
+<!--        <div class="form-group">-->
+<!--            <label class="card-support">-->
+<!--                <input type="checkbox" class="mr-1" name="choice" th:field="*{isMemoryCardSupported}"> Is wireless charging supported ?-->
+<!--            </label>-->
+<!--        </div>-->
+<!--&lt;!&ndash;        <label><b>Is wireless charging supported or not? </b></label>&ndash;&gt;-->
+<!--&lt;!&ndash;        <div class="form-group">&ndash;&gt;-->
+<!--&lt;!&ndash;            <label class="wl-support">&ndash;&gt;-->
+<!--&lt;!&ndash;                <input type="radio" class="mr-1" name="choice" th:field="*{isWirelessChargingSupported}"> Yes&ndash;&gt;-->
+<!--&lt;!&ndash;            </label>&ndash;&gt;-->
+<!--&lt;!&ndash;            <label class="wl-support">&ndash;&gt;-->
+<!--&lt;!&ndash;                <input type="radio" class="mr-1" name="choice" th:field="*{isWirelessChargingSupported}"> No&ndash;&gt;-->
+<!--&lt;!&ndash;            </label>&ndash;&gt;-->
+<!--&lt;!&ndash;        </div>&ndash;&gt;-->
+<!--&lt;!&ndash;        <div class="input-group">&ndash;&gt;-->
+<!--&lt;!&ndash;            <div class="input-group-prepend">&ndash;&gt;-->
+<!--&lt;!&ndash;                <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>&ndash;&gt;-->
+<!--&lt;!&ndash;            </div>&ndash;&gt;-->
+<!--&lt;!&ndash;            <div class="custom-file">&ndash;&gt;-->
+<!--&lt;!&ndash;                <input type="file" class="custom-file-input" id="inputGroupFile01"&ndash;&gt;-->
+<!--&lt;!&ndash;                       aria-describedby="inputGroupFileAddon01">&ndash;&gt;-->
+<!--&lt;!&ndash;                <label class="custom-file-label" for="inputGroupFile01">Choose file</label>&ndash;&gt;-->
+<!--&lt;!&ndash;            </div>&ndash;&gt;-->
+<!--&lt;!&ndash;        </div>&ndash;&gt;-->
+<!--        <br>-->
+<!--        <button type="submit" class="btn btn-primary">Submit</button>-->
+
+<!--    </form>-->
+<!--</div>-->
+
+<!--</body>-->
+<!--</html>-->
+<p th:if="${mobile != null}" th:text="' <<<   Mobile data Added   >>>'"></p>
 
 <div class="container">
     <br>
     <center><span class="badge badge-pill badge-primary" style="font-size: 30px" >Upload new mobile data</span></center>
     <br>
-    <br>
-    <form action="#" th:action="@{/admin}" th:object="@{mobile}" method="post">
+    <form action="#" th:action="@{/admin}" th:object="${mobile}" method="post">
         <div class="form-group">
             <label for="formGroupBrand"><b>Mobile Brand: </b></label>
             <input type="text" class="form-control" id="formGroupBrand" placeholder="Enter the brand name of the mobile" th:field="*{brand}">
         </div>
         <div class="form-group">
             <label for="formGroupPrice"><b>Mobile Price</b></label>
-            <input type="text" class="form-control" id="formGroupPrice" placeholder="Enter the price of the mobile" th:field="*{price}">
+            <input type="number" class="form-control" id="formGroupPrice" placeholder="Enter the price of the mobile" th:field="*{price}">
         </div>
         <div class="form-group">
             <label for="formGroupScreenSize"><b>Enter the size of the Screen(in Inches): </b></label>
-            <input type="text" class="form-control" id="formGroupScreenSize" placeholder="e.g. 4.5, 6.5 etc." th:field="*{screenSize}">
+            <input type="number" class="form-control" id="formGroupScreenSize" placeholder="e.g. 4.5, 6.5 etc." th:field="*{screenSize}">
         </div>
         <div class="form-group">
             <label for="formGroupRamSize"><b>Enter the amount of Ram available(in GB): </b></label>
-            <input type="text" class="form-control" id="formGroupRamSize" placeholder="e.g. 4, 8 etc. " th:field="*{ramSize}">
+            <input type="number" class="form-control" id="formGroupRamSize" placeholder="e.g. 4, 8 etc. " th:field="*{ramSize}">
         </div>
         <div class="form-group">
             <label for="formGroupStorageSize"><b>Enter the Storage capacity(in GB): </b></label>
-            <input type="text" class="form-control" id="formGroupStorageSize" placeholder="e.g. 64, 128 etc. " th:field="*{storageSize}">
+            <input type="number" class="form-control" id="formGroupStorageSize" placeholder="e.g. 64, 128 etc. " th:field="*{storageSize}">
         </div>
         <label><b>Is memory card supported or not? </b></label>
         <div class="form-group">
             <label class="card-support">
-                <input type="radio" class="mr-1" name="choice" th:field="*{isMemoryCardSupported}"> Yes
-            </label>
-            <label class="card-support">
-                <input type="radio" class="mr-1" name="choice" th:field="*{isMemoryCardSupported}"> No
+                <input type="radio" class="mr-1" name="choice" value="Y" th:field="*{isMemoryCardSupported}"> Yes
+                <input type="radio" class="mr-1" name="choice" value="N" th:field="*{isMemoryCardSupported}"> No
             </label>
         </div>
-        <label><b>Is wireless charging supported or not? </b></label>
+        <label><b>Is wireless charging supported ? </b></label>
         <div class="form-group">
-            <label class="wl-support">
-                <input type="radio" class="mr-1" name="choice" th:field="*{isWirelessChargingSupported}"> Yes
+            <label class="card-support">
+                <input type="radio" class="mr-1" name="choice" value="Y" th:field="*{isWirelessChargingSupported}"> Yes
+                <input type="radio" class="mr-1" name="choice" value="N" th:field="*{isWirelessChargingSupported}"> No
             </label>
-            <label class="wl-support">
-                <input type="radio" class="mr-1" name="choice" th:field="*{isWirelessChargingSupported}"> No
-            </label>
-        </div>
-        <div class="input-group">
-            <div class="input-group-prepend">
-                <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
-            </div>
-            <div class="custom-file">
-                <input type="file" class="custom-file-input" id="inputGroupFile01"
-                       aria-describedby="inputGroupFileAddon01">
-                <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
-            </div>
         </div>
         <br>
-        <div>
         <button type="submit" class="btn btn-primary">Submit</button>
-        </div>
+
     </form>
 </div>
 
 </body>
 </html>
-
-<!--<!DOCTYPE html>-->
-<!--<html lang="en">-->
-<!--<head>-->
-<!--    <title>Add new mobile data</title>-->
-<!--    <meta charset="utf-8">-->
-<!--    <meta name="viewport" content="width=device-width, initial-scale=1">x-->
-<!--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">-->
-<!--    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>-->
-<!--</head>-->
-<!--<body>-->
-
-<!--<div class="container">-->
-<!--    <br>-->
-<!--    <center><span class="badge badge-pill badge-primary" style="font-size: 30px" >Upload new mobile data</span></center>-->
-<!--    <br>-->
-<!--    <br>-->
-<!--    <form action="/action_page.php">-->
-<!--        <div class="form-group">-->
-<!--            <label for="formGroupBrand"><b>Mobile Brand: </b></label>-->
-<!--            <input type="text" class="form-control" id="formGroupBrand" placeholder="Enter the brand name of the mobile">-->
-<!--        </div>-->
-<!--        <div class="form-group">-->
-<!--            <label for="formGroupPrice"><b>Mobile Price</b></label>-->
-<!--            <input type="text" class="form-control" id="formGroupPrice" placeholder="Enter the price of the mobile">-->
-<!--        </div>-->
-<!--        <div class="form-group">-->
-<!--            <label for="formGroupScreenSize"><b>Enter the size of the Screen(in Inches): </b></label>-->
-<!--            <input type="text" class="form-control" id="formGroupScreenSize" placeholder="e.g. 4.5, 6.5 etc.">-->
-<!--        </div>-->
-<!--        <div class="form-group">-->
-<!--            <label for="formGroupRamSize"><b>Enter the amount of Ram available(in GB): </b></label>-->
-<!--            <input type="text" class="form-control" id="formGroupRamSize" placeholder="e.g. 4, 8 etc. ">-->
-<!--        </div>-->
-<!--        <div class="form-group">-->
-<!--            <label for="formGroupStorageSize"><b>Enter the Storage capacity(in GB): </b></label>-->
-<!--            <input type="text" class="form-control" id="formGroupStorageSize" placeholder="e.g. 64, 128 etc. ">-->
-<!--        </div>-->
-<!--        <label><b>Is memory card supported or not? </b></label>-->
-<!--        <div class="form-group">-->
-<!--            <label class="card-support">-->
-<!--                <input type="radio" class="mr-1" name="choice"> Yes-->
-<!--            </label>-->
-<!--            <label class="card-support">-->
-<!--                <input type="radio" class="mr-1" name="choice"> No-->
-<!--            </label>-->
-<!--        </div>-->
-<!--        <label><b>Is wireless charging supported or not? </b></label>-->
-<!--        <div class="form-group">-->
-<!--            <label class="wl-support">-->
-<!--                <input type="radio" class="mr-1" name="choice"> Yes-->
-<!--            </label>-->
-<!--            <label class="wl-support">-->
-<!--                <input type="radio" class="mr-1" name="choice"> No-->
-<!--            </label>-->
-<!--        </div>-->
-<!--        <div class="input-group">-->
-<!--            <div class="input-group-prepend">-->
-<!--                <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>-->
-<!--            </div>-->
-<!--            <div class="custom-file">-->
-<!--                <input type="file" class="custom-file-input" id="inputGroupFile01"-->
-<!--                       aria-describedby="inputGroupFileAddon01">-->
-<!--                <label class="custom-file-label" for="inputGroupFile01">Choose file</label>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--        <br>-->
-<!--        <div>-->
-<!--            <button type="submit" class="btn btn-primary">Submit</button>-->
-<!--        </div>-->
-<!--    </form>-->
-<!--</div>-->
-
-<!--</body>-->
-<!--</html>-->
