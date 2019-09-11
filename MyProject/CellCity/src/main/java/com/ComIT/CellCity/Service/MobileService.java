@@ -1,5 +1,6 @@
-package com.ComIT.CellCity.Model.Mobile;
+package com.ComIT.CellCity.Service;
 
+import com.ComIT.CellCity.Model.Mobile;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

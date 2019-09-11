@@ -1,4 +1,4 @@
-package com.ComIT.CellCity.Model.Mobile;
+package com.ComIT.CellCity.Model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -30,6 +30,10 @@ public class Mobile {
         this.storageSize = storageSize;
         this.isMemoryCardSupported = isMemoryCardSupported;
         this.isWirelessChargingSupported = isWirelessChargingSupported;
+    }
+
+    public Long getId() {
+        return Id;
     }
 
     public String getBrand() {

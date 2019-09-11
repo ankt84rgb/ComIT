@@ -1,7 +1,7 @@
 package com.ComIT.CellCity.Controller;
 
-import com.ComIT.CellCity.Model.Mobile.Mobile;
-import com.ComIT.CellCity.Model.Mobile.MobileService;
+import com.ComIT.CellCity.Model.Mobile;
+import com.ComIT.CellCity.Service.MobileService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
